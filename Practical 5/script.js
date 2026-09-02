@@ -62,9 +62,6 @@ function editProfile() {
 
 }
 
-
-// SAVE PROFILE
-
 function saveProfile() {
 
     let name = document.getElementById("name").value.trim();
@@ -76,29 +73,17 @@ function saveProfile() {
     let dob = document.getElementById("dob").value;
     let address = document.getElementById("address").value.trim();
 
-
-    // REGEX RULES
-
-    // Name: Only letters and spaces, minimum 3 characters
     let nameRegex = /^[A-Za-z ]{3,}$/;
-
-    // Enrollment: Example format 23CS001
+    
     let enrollmentRegex = /^[0-9A-Za-z]{5,15}$/;
 
-    // Email: Valid email format
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Branch: Only letters and spaces
     let branchRegex = /^[A-Za-z ]{2,}$/;
 
-    // Phone: Exactly 10 digits
     let phoneRegex = /^[0-9]{10}$/;
 
-    // Address: Minimum 10 characters
     let addressRegex = /^.{10,}$/;
-
-
-    // NAME VALIDATION
 
     if (name === "") {
 
@@ -115,9 +100,6 @@ function saveProfile() {
 
     }
 
-
-    // ENROLLMENT VALIDATION
-
     if (enrollment === "") {
 
         alert("⚠️ Please enter Enrollment Number.");
@@ -133,9 +115,6 @@ function saveProfile() {
 
     }
 
-
-    // EMAIL VALIDATION
-
     if (email === "") {
 
         alert("⚠️ Please enter Email.");
@@ -150,10 +129,7 @@ function saveProfile() {
         return;
 
     }
-
-
-    // BRANCH VALIDATION
-
+    
     if (branch === "") {
 
         alert("⚠️ Please enter Branch.");
@@ -168,9 +144,6 @@ function saveProfile() {
         return;
 
     }
-
-
-    // PHONE VALIDATION
 
     if (phone === "") {
 
@@ -187,18 +160,12 @@ function saveProfile() {
 
     }
 
-
-    // DOB VALIDATION
-
     if (dob === "") {
 
         alert("⚠️ Please select Date of Birth.");
         return;
 
     }
-
-
-    // ADDRESS VALIDATION
 
     if (address === "") {
 
@@ -215,12 +182,7 @@ function saveProfile() {
 
     }
 
-
-    // ALL VALID
-
     alert("✅ Profile Saved Successfully!");
-
-    // Disable fields again after saving
 
     document.getElementById("name").disabled = true;
     document.getElementById("enrollment").disabled = true;
