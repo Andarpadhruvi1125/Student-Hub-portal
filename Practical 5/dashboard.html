@@ -58,13 +58,7 @@
 
         </tr>
 
-
-        <!-- MAIN -->
-
         <tr>
-
-
-            <!-- LEFT MENU -->
 
             <td width="20%" valign="top" align="center">
 
@@ -142,25 +136,16 @@
 
             </td>
 
-
-            <!-- DASHBOARD -->
-
             <td align="center">
 
                 <h1 id="welcomeText">
                     Welcome Student
                 </h1>
 
-
-                <!-- SMALL FEATURES -->
-
                 <table cellpadding="20">
 
                     <tr align="center">
-
-
-                        <!-- ATTENDANCE -->
-
+                        
                         <td>
 
                             <table
@@ -190,9 +175,6 @@
 
                         </td>
 
-
-                        <!-- ASSIGNMENT -->
-
                         <td>
 
                             <table
@@ -221,10 +203,7 @@
                             </table>
 
                         </td>
-
-
-                        <!-- NOTICE -->
-
+                        
                         <td>
 
                             <table
@@ -253,9 +232,6 @@
                             </table>
 
                         </td>
-
-
-                        <!-- EVENTS -->
 
                         <td>
 
@@ -294,15 +270,9 @@
 
                 <br>
 
-
-                <!-- UPCOMING CLASSES + NOTICE -->
-
                 <table cellpadding="20">
 
                     <tr>
-
-
-                        <!-- UPCOMING CLASSES -->
 
                         <td>
 
@@ -343,9 +313,6 @@
                             </table>
 
                         </td>
-
-
-                        <!-- LATEST NOTICE -->
 
                         <td>
 
@@ -398,16 +365,8 @@
 
     </table>
 
-
-    <!-- JAVASCRIPT -->
-
     <script>
-
-
-        // =========================
-        // LOAD STUDENT NAME
-        // =========================
-
+        
         let savedName =
             localStorage.getItem("name");
 
@@ -426,11 +385,6 @@
 
         }
 
-
-        // =========================
-        // ATTENDANCE
-        // =========================
-
         let attendance =
             localStorage.getItem("attendance");
 
@@ -443,11 +397,6 @@
                 attendance + "%";
 
         }
-
-
-        // =========================
-        // ASSIGNMENT
-        // =========================
 
         let pendingAssignment =
             localStorage.getItem(
@@ -463,12 +412,7 @@
                 pendingAssignment + " Pending";
 
         }
-
-
-        // =========================
-        // NOTICE
-        // =========================
-
+        
         let notice =
             localStorage.getItem(
                 "latestNotice"
@@ -493,11 +437,6 @@
 
         }
 
-
-        // =========================
-        // UPCOMING CLASS
-        // =========================
-
         let upcomingClass =
             localStorage.getItem(
                 "upcomingClass"
@@ -521,11 +460,6 @@
                 "No class information available";
 
         }
-
-
-        // =========================
-        // WELCOME MESSAGE
-        // =========================
 
         if (
             !sessionStorage.getItem(
