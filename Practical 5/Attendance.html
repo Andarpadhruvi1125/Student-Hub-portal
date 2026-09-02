@@ -72,8 +72,6 @@
 
                 <br><br>
 
-                <!-- Attendance Table -->
-
                 <table border="1" width="90%" cellpadding="15">
 
                     <thead>
@@ -91,8 +89,6 @@
                 </table>
 
                 <br>
-
-                <!-- Overall Attendance -->
 
                 <table border="1" width="90%" cellpadding="20">
 
@@ -118,9 +114,7 @@
 
 
     <script>
-
-        // Attendance data for each semester
-
+        
         const attendanceData = {
 
             1: [
@@ -205,9 +199,6 @@
             let totalPresent = 0;
             let totalClasses = 0;
 
-
-            // Add new attendance rows
-
             data.forEach(function(subject) {
 
                 let row = `
@@ -226,23 +217,14 @@
 
             });
 
-
-            // Calculate overall attendance
-
             let overall = Math.round(
                 (totalPresent / totalClasses) * 100
             );
-
-
-            // Display overall attendance
 
             document.getElementById("overallAttendance").innerHTML =
                 overall + "%";
 
         }
-
-
-        // Show Semester 1 attendance when page opens
 
         showAttendance();
 
