@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Tech Fest",
+    "date": "2026-09-20",
+    "category": "Technical",
+    "venue": "Main Auditorium"
+  },
+  {
+    "id": 2,
+    "name": "Cultural Night",
+    "date": "2026-09-22",
+    "category": "Cultural",
+    "venue": "Open Ground"
+  },
+  {
+    "id": 3,
+    "name": "Coding Competition",
+    "date": "2026-09-25",
+    "category": "Technical",
+    "venue": "Computer Lab"
+  },
+  {
+    "id": 4,
+    "name": "Sports Day",
+    "date": "2026-09-27",
+    "category": "Sports",
+    "venue": "Sports Complex"
+  },
+]

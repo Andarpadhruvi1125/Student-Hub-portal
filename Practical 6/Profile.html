@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Hub Portal - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+    <tr>
+        <td colspan="2">
+
+            <table width="100%">
+                <tr>
+
+                    <td align="center">
+                        <h2>Student Hub Portal</h2>
+                    </td>
+
+                    <td align="right">
+                        👤
+                        <a href="Profile.html">Name</a>
+                        &nbsp;&nbsp;
+                        <a href="settings.html">Settings</a>
+                    </td>
+
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+
+        <td width="22%" valign="top">
+
+            <p><a href="dashboard.html">Dashboard</a></p>
+            <p><a href="attendance.html">Attendance</a></p>
+            <p><a href="course.html">Course</a></p>
+            <p><a href="assignment.html">Assignment</a></p>
+            <p><a href="result.html">Result</a></p>
+            <p><a href="fees.html">Fees</a></p>
+            <p><a href="library.html">Library</a></p>
+            <p><a href="Profile.html">Profile</a></p>
+            <p><a href="certificate.html">Certificate</a></p>
+            <p><a href="placement.html">Placement</a></p>
+            <p><a href="feedback.html">Feed Back</a></p>
+
+            <p>
+                <a href="Academic Calendar.html">
+                    Academic Calendar
+                </a>
+            </p>
+
+        </td>
+
+        <td valign="top">
+
+            <h2 align="center">Student Profile</h2>
+
+            <table width="100%" cellpadding="10">
+
+                <tr>
+                    <td align="center">
+
+                        <b>Enter Student Name:</b>
+
+                        <input
+                            type="text"
+                            id="searchName"
+                            placeholder="Enter name">
+
+                        <input
+                            type="button"
+                            value="Load Profile"
+                            onclick="loadProfile()">
+
+                    </td>
+                </tr>
+
+            </table>
+
+            <br>
+
+            <table width="100%" cellpadding="10">
+
+                <tr>
+
+                    <td width="35%" align="center" valign="top">
+
+                        <img
+                            id="profilePhoto"
+                            class="profile-photo"
+                            src="https://via.placeholder.com/150"
+                            alt="Profile Photo"
+                            width="150"
+                            height="150">
+
+                    </td>
+
+                    <td width="65%" valign="top">
+
+                        <h2 align="center">
+                            Profile Information
+                        </h2>
+
+                        <table cellpadding="8">
+
+                            <tr>
+                                <td><b>Name :</b></td>
+                                <td>
+                                    <input type="text" id="name" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Enrollment No. :</b></td>
+                                <td>
+                                    <input type="text" id="enrollment" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Email :</b></td>
+                                <td>
+                                    <input type="email" id="email" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Branch :</b></td>
+                                <td>
+                                    <input type="text" id="branch" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Semester :</b></td>
+                                <td>
+                                    <input type="text" id="semester" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Phone :</b></td>
+                                <td>
+                                    <input type="text" id="phone" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Date of Birth :</b></td>
+                                <td>
+                                    <input type="date" id="dob" disabled>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td><b>Address :</b></td>
+                                <td>
+                                    <textarea
+                                        id="address"
+                                        rows="3"
+                                        cols="20"
+                                        disabled></textarea>
+                                </td>
+                            </tr>
+
+                        </table>
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </td>
+
+    </tr>
+
+</table>
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>
+

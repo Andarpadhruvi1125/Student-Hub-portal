@@ -1,0 +1,37 @@
+
+[
+    {
+        "name": "Dhruvi Andarpa",
+        "enrollment": "24IT001",
+        "email": "dhruvi@gmail.com",
+        "branch": "Information Technology",
+        "semester": "Semester 3",
+        "phone": "9876543210",
+        "dob": "2005-05-15",
+        "address": "Anand, Gujarat",
+        "photo": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Riya Patel",
+        "enrollment": "24IT002",
+        "email": "riya@gmail.com",
+        "branch": "Information Technology",
+        "semester": "Semester 3",
+        "phone": "9876543211",
+        "dob": "2005-08-20",
+        "address": "Ahmedabad, Gujarat",
+        "photo": "https://via.placeholder.com/150"
+    },
+    {
+        "name": "Neha Shah",
+        "enrollment": "24IT003",
+        "email": "neha@gmail.com",
+        "branch": "Computer Engineering",
+        "semester": "Semester 3",
+        "phone": "9876543212",
+        "dob": "2005-03-10",
+        "address": "Vadodara, Gujarat",
+        "photo": "https://via.placeholder.com/150"
+    }
+]
+

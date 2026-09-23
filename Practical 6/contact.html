@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <center>
+
+        <h2>Student Hub Portal</h2>
+
+        <hr>
+
+        <h1>Contact Us</h1>
+
+        <table border="1" width="80%" cellpadding="15">
+
+            <tr>
+                <td>
+
+                    <h3>Student Hub Portal Support</h3>
+
+                    <p><b>College Name :</b> CHARUSAT UNIVERSITY</p>
+
+                    <p><b>Address :</b> Kheda, Gujarat - 380001</p>
+
+                    <p><b>Email :</b> charusatuniversity@gmail.com</p>
+
+                    <p><b>Phone :</b> +91 9876543210</p>
+
+                    <p><b>Office Hours :</b> Monday - Saturday (9:00 AM to 4:20 PM)</p>
+
+                </td>
+            </tr>
+
+        </table>
+
+        <br>
+
+        <h2>Send Your Query</h2>
+
+        <form id="contactForm">
+
+            <table border="1" width="80%" cellpadding="10">
+
+                <tr>
+                    <td>Name</td>
+
+                    <td>
+                        <input type="text" id="name" name="name" size="40">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email</td>
+
+                    <td>
+                        <input type="email" id="email" name="email" size="40">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Subject</td>
+
+                    <td>
+                        <input type="text" id="subject" name="subject" size="40">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Message</td>
+
+                    <td>
+                        <textarea id="message" name="message"
+                            rows="5" cols="42"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" align="center">
+
+                        <input type="submit" value="Send Message">
+
+                        <input type="reset" value="Clear">
+
+                    </td>
+                </tr>
+
+            </table>
+
+        </form>
+
+        <br>
+
+        <!-- Only Back to Home option -->
+
+        <a href="home.html">
+            <input type="button" value="Back to Home">
+        </a>
+
+    </center>
+
+
+    <script>
+
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let subject = document.getElementById("subject").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            if (name === "") {
+                alert("Please enter your name.");
+                return;
+            }
+
+            if (email === "") {
+                alert("Please enter your email.");
+                return;
+            }
+
+            if (subject === "") {
+                alert("Please enter the subject.");
+                return;
+            }
+
+            if (message === "") {
+                alert("Please enter your message.");
+                return;
+            }
+
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            alert("Message Sent Successfully! Thank you, " + name + ".");
+
+            document.getElementById("contactForm").reset();
+
+        });
+
+    </script>
+
+</body>
+
+</html>

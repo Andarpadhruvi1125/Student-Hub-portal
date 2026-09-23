@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Hub Portal - Settings</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            transition: 0.3s;
+        }
+
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+
+        .dark-mode a {
+            color: lightblue;
+        }
+
+        .setting-box {
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+        <tr>
+
+            <td colspan="2">
+
+                <table width="100%">
+
+                    <tr>
+
+                        <td align="center">
+                            <h2>Student Hub Portal</h2>
+                        </td>
+
+                        <td align="right">
+
+                            👤
+                            <a href="profile.html">Name</a>
+
+                            &nbsp;&nbsp;
+
+                            <a href="settings.html">Settings</a>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+
+        <tr>
+
+            <td width="22%" valign="top">
+
+                <p>
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+                </p>
+
+                <p>
+                    <a href="attendance.html">
+                        Attendance
+                    </a>
+                </p>
+
+                <p>
+                    <a href="course.html">
+                        Course
+                    </a>
+                </p>
+
+                <p>
+                    <a href="assignment.html">
+                        Assignment
+                    </a>
+                </p>
+
+                <p>
+                    <a href="result.html">
+                        Result
+                    </a>
+                </p>
+
+                <p>
+                    <a href="fees.html">
+                        Fees
+                    </a>
+                </p>
+
+                <p>
+                    <a href="library.html">
+                        Library
+                    </a>
+                </p>
+
+                <p>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                </p>
+
+                <p>
+                    <a href="certificate.html">
+                        Certificate
+                    </a>
+                </p>
+
+                <p>
+                    <a href="placement.html">
+                        Placement
+                    </a>
+                </p>
+
+                <p>
+                    <a href="feedback.html">
+                        Feedback
+                    </a>
+                </p>
+
+                <p>
+                    <a href="Academic Calendar.html">
+                        Academic Calendar
+                    </a>
+                </p>
+
+            </td>
+
+            <td valign="top">
+
+                <h2>Settings</h2>
+
+                <fieldset>
+
+                    <legend>
+
+                        <a href="#" onclick="showPassword()">
+                            Change Password
+                        </a>
+
+                    </legend>
+
+
+                    <div id="passwordSection"
+                         class="setting-box hidden">
+
+                        <p>
+                            <b>Current Password</b>
+                        </p>
+
+                        <input
+                            type="password"
+                            id="currentPassword">
+
+                        <p>
+                            <b>New Password</b>
+                        </p>
+
+                        <input
+                            type="password"
+                            id="newPassword">
+
+                        <p>
+                            <b>Confirm New Password</b>
+                        </p>
+
+                        <input
+                            type="password"
+                            id="confirmPassword">
+
+                        <br><br>
+
+                        <button onclick="changePassword()">
+                            Change Password
+                        </button>
+
+                    </div>
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+
+                    <legend>
+                        Notification Setting
+                    </legend>
+
+                    <div class="setting-box">
+
+                        <input
+                            type="checkbox"
+                            id="notification">
+
+                        Enable Notifications
+
+                    </div>
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+
+                    <legend>
+                        Language
+                    </legend>
+
+                    <div class="setting-box">
+
+                        <select id="language">
+
+                            <option value="English">
+                                English
+                            </option>
+
+                            <option value="Gujarati">
+                                Gujarati
+                            </option>
+
+                            <option value="Hindi">
+                                Hindi
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+
+                    <legend>
+                        Theme
+                    </legend>
+
+                    <div class="setting-box">
+
+                        <input
+                            type="radio"
+                            name="theme"
+                            id="light"
+                            value="light">
+
+                        Light
+
+                        &nbsp;&nbsp;
+
+                        <input
+                            type="radio"
+                            name="theme"
+                            id="dark"
+                            value="dark">
+
+                        Dark
+
+                    </div>
+
+                </fieldset>
+
+                <br>
+
+                <fieldset>
+
+                    <legend>
+
+                        <a href="#" onclick="showPrivacy()">
+                            Privacy Setting
+                        </a>
+
+                    </legend>
+
+                    <div id="privacySection"
+                         class="setting-box hidden">
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="profileVisibility">
+
+                            Allow other students to view my profile
+
+                        </p>
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="emailVisibility">
+
+                            Show my email address
+
+                        </p>
+
+                        <p>
+
+                            <input
+                                type="checkbox"
+                                id="phoneVisibility">
+
+                            Show my phone number
+
+                        </p>
+
+                        <button onclick="savePrivacy()">
+                            Save Privacy Settings
+                        </button>
+
+                    </div>
+
+                </fieldset>
+
+                <br><br>
+
+                <button onclick="saveSettings()">
+                    Save Changes
+                </button>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+    <script>
+
+        function showPassword() {
+
+            event.preventDefault();
+
+            let section =
+                document.getElementById(
+                    "passwordSection"
+                );
+
+            section.classList.toggle("hidden");
+
+        }
+
+        function changePassword() {
+
+            let current =
+                document.getElementById(
+                    "currentPassword"
+                ).value;
+
+            let newPassword =
+                document.getElementById(
+                    "newPassword"
+                ).value;
+
+            let confirm =
+                document.getElementById(
+                    "confirmPassword"
+                ).value;
+
+            if (current === "") {
+
+                alert("Please enter current password.");
+
+                return;
+
+            }
+
+            if (newPassword === "") {
+
+                alert("Please enter new password.");
+
+                return;
+
+            }
+
+            if (newPassword.length < 6) {
+
+                alert(
+                    "New password must contain at least 6 characters."
+                );
+
+                return;
+
+            }
+
+            if (newPassword !== confirm) {
+
+                alert(
+                    "New password and confirm password do not match."
+                );
+
+                return;
+
+            }
+
+            localStorage.setItem(
+                "userPassword",
+                newPassword
+            );
+
+            alert(
+                "Password Changed Successfully!"
+            );
+
+            document.getElementById(
+                "currentPassword"
+            ).value = "";
+
+            document.getElementById(
+                "newPassword"
+            ).value = "";
+
+            document.getElementById(
+                "confirmPassword"
+            ).value = "";
+
+        }
+
+        function showPrivacy() {
+
+            event.preventDefault();
+
+            let section =
+                document.getElementById(
+                    "privacySection"
+                );
+
+            section.classList.toggle("hidden");
+
+        }
+
+        function savePrivacy() {
+
+            let profile =
+                document.getElementById(
+                    "profileVisibility"
+                ).checked;
+
+            let email =
+                document.getElementById(
+                    "emailVisibility"
+                ).checked;
+
+            let phone =
+                document.getElementById(
+                    "phoneVisibility"
+                ).checked;
+
+            localStorage.setItem(
+                "profileVisibility",
+                profile
+            );
+
+            localStorage.setItem(
+                "emailVisibility",
+                email
+            );
+
+            localStorage.setItem(
+                "phoneVisibility",
+                phone
+            );
+
+            alert(
+                "Privacy Settings Saved Successfully!"
+            );
+
+        }
+
+        function saveSettings() {
+
+            let notification =
+                document.getElementById(
+                    "notification"
+                ).checked;
+
+            let language =
+                document.getElementById(
+                    "language"
+                ).value;
+
+            let theme =
+                document.querySelector(
+                    'input[name="theme"]:checked'
+                );
+
+            localStorage.setItem(
+                "notification",
+                notification
+            );
+
+            localStorage.setItem(
+                "language",
+                language
+            );
+
+            if (theme) {
+
+                localStorage.setItem(
+                    "theme",
+                    theme.value
+                );
+
+            }
+
+            alert(
+                "Settings Saved Successfully!"
+            );
+
+        }
+
+        window.onload = function() {
+
+            if (
+                localStorage.getItem(
+                    "notification"
+                ) === "true"
+            ) {
+
+                document.getElementById(
+                    "notification"
+                ).checked = true;
+
+            }
+
+            let language =
+                localStorage.getItem(
+                    "language"
+                );
+
+            if (language) {
+
+                document.getElementById(
+                    "language"
+                ).value = language;
+
+            }
+
+            let theme =
+                localStorage.getItem(
+                    "theme"
+                );
+
+            if (theme === "dark") {
+
+                document.getElementById(
+                    "dark"
+                ).checked = true;
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            }
+
+            else {
+
+                document.getElementById(
+                    "light"
+                ).checked = true;
+
+            }
+
+            if (
+                localStorage.getItem(
+                    "profileVisibility"
+                ) === "true"
+            ) {
+
+                document.getElementById(
+                    "profileVisibility"
+                ).checked = true;
+
+            }
+
+            if (
+                localStorage.getItem(
+                    "emailVisibility"
+                ) === "true"
+            ) {
+
+                document.getElementById(
+                    "emailVisibility"
+                ).checked = true;
+
+            }
+
+            if (
+                localStorage.getItem(
+                    "phoneVisibility"
+                ) === "true"
+            ) {
+                document.getElementById(
+                    "phoneVisibility"
+                ).checked = true;
+
+            }
+
+        };
+
+        document.getElementById(
+            "light"
+        ).addEventListener(
+            "change",
+            function() {
+
+                document.body.classList.remove(
+                    "dark-mode"
+                );
+
+            }
+        );
+
+        document.getElementById(
+            "dark"
+        ).addEventListener(
+            "change",
+            function() {
+
+                document.body.classList.add(
+                    "dark-mode"
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

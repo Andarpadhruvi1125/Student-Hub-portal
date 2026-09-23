@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+        <tr>
+
+            <td colspan="2">
+
+                <table width="100%">
+
+                    <tr>
+
+                        <td align="center">
+
+                            <h2>Student Hub Portal</h2>
+
+                        </td>
+
+
+                        <td align="right">
+
+                            <a href="HOME.html">
+                                Home
+                            </a>
+
+                            &nbsp;&nbsp;
+
+                            👤
+
+                            <a href="profile.html" id="studentName">
+                                Name
+                            </a>
+
+                            &nbsp;&nbsp;
+
+                            <a href="settings.html">
+                                Settings
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+
+        <!-- MAIN -->
+
+        <tr>
+
+
+            <!-- LEFT MENU -->
+
+            <td width="20%" valign="top" align="center">
+
+                <p>
+                    <a href="dashboard.html">
+                        Dashboard
+                    </a>
+                </p>
+
+                <p>
+                    <a href="attendance.html">
+                        Attendance
+                    </a>
+                </p>
+
+                <p>
+                    <a href="course.html">
+                        Course
+                    </a>
+                </p>
+
+                <p>
+                    <a href="assignment.html">
+                        Assignment
+                    </a>
+                </p>
+
+                <p>
+                    <a href="result.html">
+                        Result
+                    </a>
+                </p>
+
+                <p>
+                    <a href="fees.html">
+                        Fees
+                    </a>
+                </p>
+
+                <p>
+                    <a href="library.html">
+                        Library
+                    </a>
+                </p>
+
+                <p>
+                    <a href="profile.html">
+                        Profile
+                    </a>
+                </p>
+
+                <p>
+                    <a href="certificate.html">
+                        Certificate
+                    </a>
+                </p>
+
+                <p>
+                    <a href="placement.html">
+                        Placement
+                    </a>
+                </p>
+
+                <p>
+                    <a href="feedback.html">
+                        Feedback
+                    </a>
+                </p>
+
+                <p>
+                    <a href="Academic Calendar.html">
+                        Academic Calendar
+                    </a>
+                </p>
+
+            </td>
+
+
+            <!-- DASHBOARD -->
+
+            <td align="center">
+
+                <h1 id="welcomeText">
+                    Welcome Student
+                </h1>
+
+
+                <!-- SMALL FEATURES -->
+
+                <table cellpadding="20">
+
+                    <tr align="center">
+
+
+                        <!-- ATTENDANCE -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="120"
+                                height="100">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <a href="attendance.html">
+                                            Attendance
+                                        </a>
+
+                                        <br><br>
+
+                                        <b id="attendanceValue">
+                                            92%
+                                        </b>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                        <!-- ASSIGNMENT -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="120"
+                                height="100">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <a href="assignment.html">
+                                            Assignment
+                                        </a>
+
+                                        <br><br>
+
+                                        <b id="assignmentValue">
+                                            3 Pending
+                                        </b>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                        <!-- NOTICE -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="120"
+                                height="100">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <a href="notice.html">
+                                            Notice
+                                        </a>
+
+                                        <br><br>
+
+                                        <b id="noticeValue">
+                                            2 New
+                                        </b>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                        <!-- EVENTS -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="120"
+                                height="100">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <a href="events.html">
+                                            Events
+                                        </a>
+
+                                        <br><br>
+
+                                        <b>
+                                            Upcoming
+                                        </b>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                    </tr>
+
+                </table>
+
+
+                <br>
+
+
+                <!-- UPCOMING CLASSES + NOTICE -->
+
+                <table cellpadding="20">
+
+                    <tr>
+
+
+                        <!-- UPCOMING CLASSES -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="300"
+                                height="250">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <h2>
+                                            Upcoming Classes
+                                        </h2>
+
+
+                                        <p id="classInfo">
+                                            Loading...
+                                        </p>
+
+
+                                        <br>
+
+
+                                        <a href="timetable.html">
+
+                                            <input
+                                                type="button"
+                                                value="View Time Table">
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                        <!-- LATEST NOTICE -->
+
+                        <td>
+
+                            <table
+                                border="1"
+                                width="300"
+                                height="250">
+
+                                <tr>
+
+                                    <td align="center">
+
+                                        <h2>
+                                            Latest Notice
+                                        </h2>
+
+
+                                        <p id="latestNotice">
+                                            Loading...
+                                        </p>
+
+
+                                        <br>
+
+
+                                        <a href="notice.html">
+
+                                            <input
+                                                type="button"
+                                                value="View All">
+
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </table>
+
+                        </td>
+
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+
+        // =========================
+        // LOAD STUDENT NAME
+        // =========================
+
+        let savedName =
+            localStorage.getItem("name");
+
+
+        if (savedName && savedName.trim() !== "") {
+
+            document.getElementById(
+                "studentName"
+            ).innerText = savedName;
+
+
+            document.getElementById(
+                "welcomeText"
+            ).innerText =
+                "Welcome " + savedName;
+
+        }
+
+
+        // =========================
+        // ATTENDANCE
+        // =========================
+
+        let attendance =
+            localStorage.getItem("attendance");
+
+
+        if (attendance) {
+
+            document.getElementById(
+                "attendanceValue"
+            ).innerText =
+                attendance + "%";
+
+        }
+
+
+        // =========================
+        // ASSIGNMENT
+        // =========================
+
+        let pendingAssignment =
+            localStorage.getItem(
+                "pendingAssignment"
+            );
+
+
+        if (pendingAssignment) {
+
+            document.getElementById(
+                "assignmentValue"
+            ).innerText =
+                pendingAssignment + " Pending";
+
+        }
+
+
+        // =========================
+        // NOTICE
+        // =========================
+
+        let notice =
+            localStorage.getItem(
+                "latestNotice"
+            );
+
+
+        if (notice) {
+
+            document.getElementById(
+                "latestNotice"
+            ).innerText =
+                notice;
+
+        }
+
+        else {
+
+            document.getElementById(
+                "latestNotice"
+            ).innerText =
+                "No new notices";
+
+        }
+
+
+        // =========================
+        // UPCOMING CLASS
+        // =========================
+
+        let upcomingClass =
+            localStorage.getItem(
+                "upcomingClass"
+            );
+
+
+        if (upcomingClass) {
+
+            document.getElementById(
+                "classInfo"
+            ).innerText =
+                upcomingClass;
+
+        }
+
+        else {
+
+            document.getElementById(
+                "classInfo"
+            ).innerText =
+                "No class information available";
+
+        }
+
+
+        // =========================
+        // WELCOME MESSAGE
+        // =========================
+
+        if (
+            !sessionStorage.getItem(
+                "dashboardVisited"
+            )
+        ) {
+
+            setTimeout(function() {
+
+                alert(
+                    "Welcome to Student Hub Portal!"
+                );
+
+            }, 500);
+
+
+            sessionStorage.setItem(
+                "dashboardVisited",
+                "true"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>
