@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>About - Student Hub Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f6ff;
+        }
+
+        .header {
+            background-color: #ffffff;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        .about-box {
+            width: 80%;
+            background-color: white;
+            border: 1px solid black;
+            padding: 25px;
+            margin: 30px auto;
+        }
+
+        .about-box h1 {
+            text-align: center;
+        }
+
+        .section {
+            border: 1px solid #999;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .section h3 {
+            margin-top: 0;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .feature {
+            border: 1px solid #999;
+            padding: 12px;
+            text-align: center;
+            background-color: #f8f8f8;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #moreInfo {
+            display: none;
+        }
+
+        .home-button {
+            text-align: center;
+            margin: 25px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+
+    <table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+        <tr>
+
+            <td>
+
+                <table width="100%">
+
+                    <tr>
+
+                        <td align="center">
+                            <h2>🎓 Student Hub Portal</h2>
+                        </td>
+
+                        <td align="right">
+
+                            <a href="profile.html">
+                                <input type="button" value="Name">
+                            </a>
+
+                            <a href="Settings.html">
+                                <input type="button" value="Setting">
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <!-- About Section -->
+
+    <div class="about-box">
+
+        <h1>🌟 About Student Hub Portal</h1>
+
+        <div class="section">
+
+            <h3>📖 Introduction</h3>
+
+            <p>
+
+                Student Hub Portal is an online system designed to help
+                students manage their academic activities in one place.
+
+                It provides quick access to attendance, courses,
+                assignments, results, fees, library services,
+                certificates, placement information, notices,
+                events and academic calendar.
+
+            </p>
+
+        </div>
+
+
+        <!-- Features -->
+
+        <div class="section">
+
+            <h3>✨ Features</h3>
+
+            <div class="features">
+
+                <div class="feature">📊 Student Dashboard</div>
+
+                <div class="feature">📅 Attendance Management</div>
+
+                <div class="feature">📚 Course Details</div>
+
+                <div class="feature">📝 Assignment Submission</div>
+
+                <div class="feature">🏆 Result & Performance</div>
+
+                <div class="feature">💳 Fee Details</div>
+
+                <div class="feature">📖 Library Services</div>
+
+                <div class="feature">📢 Notices & Events</div>
+
+                <div class="feature">🗓 Academic Calendar</div>
+
+                <div class="feature">💼 Placement Information</div>
+
+                <div class="feature">👤 Profile & Settings</div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Objective -->
+
+        <div class="section">
+
+            <h3>🎯 Objective</h3>
+
+            <p>
+
+                The main objective of the Student Hub Portal is to
+                provide students with a single platform where they can
+                access all academic information quickly and efficiently.
+
+            </p>
+
+
+            <p id="moreInfo">
+
+                The portal reduces the need to visit multiple systems
+                for different academic activities. Students can easily
+                check their academic information, manage their activities
+                and stay updated with important college information.
+
+            </p>
+
+            <button id="readMoreBtn" onclick="toggleInfo()">
+                Read More
+            </button>
+
+        </div>
+
+
+        <!-- Back Home -->
+
+        <div class="home-button">
+
+            <a href="home.html">
+
+                <input type="button" value="🏠 Back to Home">
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+
+    <script>
+
+        function toggleInfo() {
+
+            let info = document.getElementById("moreInfo");
+
+            let button = document.getElementById("readMoreBtn");
+
+
+            if (info.style.display === "none") {
+
+                info.style.display = "block";
+
+                button.innerHTML = "Read Less";
+
+            }
+
+            else {
+
+                info.style.display = "none";
+
+                button.innerHTML = "Read More";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

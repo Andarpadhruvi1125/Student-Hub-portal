@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Hub Portal - Calendar</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #f2f6ff;
+        }
+
+        /* ================= HEADER ================= */
+
+        .header {
+            background: #243b64;
+            color: white;
+            padding: 18px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+        }
+
+        /* ================= MAIN CONTAINER ================= */
+
+        .container {
+            display: flex;
+            min-height: calc(100vh - 70px);
+        }
+
+        /* ================= LEFT SIDEBAR ================= */
+
+        .sidebar {
+            width: 220px;
+            background: white;
+            padding: 20px 15px;
+            box-shadow: 2px 0 8px #d0d5df;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            color: #243b64;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            padding: 13px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: #f2f6ff;
+            color: #243b64;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .feature:hover {
+            background: #dce7ff;
+            transform: translateX(3px);
+        }
+
+        /* ================= CENTER CONTENT ================= */
+
+        .content {
+            flex: 1;
+            padding: 25px;
+        }
+
+        .content h2 {
+            text-align: center;
+            color: #243b64;
+            margin-bottom: 18px;
+        }
+
+        /* MONTH SELECT */
+
+        select {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px 25px;
+            font-size: 16px;
+            border: 1px solid #aaa;
+            border-radius: 7px;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* ================= CALENDAR ================= */
+
+        .calendar {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #d0d5df;
+        }
+
+        .dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+        }
+
+        /* DAY NAME */
+
+        .day {
+            background: #243b64;
+            color: white;
+            padding: 12px 5px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        /* DATE BOX */
+
+        .date {
+            height: 65px;
+            background: #f8faff;
+            border: 1px solid #d4d9e3;
+            border-radius: 8px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-weight: bold;
+            font-size: 17px;
+
+            transition: 0.2s;
+        }
+
+        .date:hover {
+            background: #e3ebff;
+            cursor: pointer;
+            transform: scale(1.03);
+        }
+
+        /* EMPTY BOX */
+
+        .empty {
+            border: none;
+            background: transparent;
+        }
+
+        /* ================= RIGHT HOLIDAY PANEL ================= */
+
+        .holidays {
+            width: 260px;
+            background: white;
+            padding: 20px;
+            box-shadow: -2px 0 8px #d0d5df;
+        }
+
+        .holidays h2 {
+            text-align: center;
+            color: #243b64;
+            margin-bottom: 20px;
+        }
+
+        .holiday {
+            padding: 12px;
+            margin-bottom: 12px;
+            background: #fff4f4;
+            border-left: 5px solid #e05252;
+            border-radius: 7px;
+        }
+
+        .holiday-date {
+            font-weight: bold;
+            color: #e05252;
+        }
+
+        .holiday-name {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+
+            .holidays {
+                width: 220px;
+            }
+
+            .sidebar {
+                width: 190px;
+            }
+
+            .content {
+                padding: 15px;
+            }
+
+        }
+
+        @media (max-width: 700px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar,
+            .holidays {
+                width: 100%;
+            }
+
+            .sidebar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+
+            .sidebar h2 {
+                width: 100%;
+            }
+
+            .feature {
+                flex: 1;
+                min-width: 130px;
+                margin-bottom: 0;
+            }
+
+            .holidays {
+                margin-top: 10px;
+            }
+
+            .date {
+                height: 50px;
+                font-size: 14px;
+            }
+
+            .day {
+                font-size: 12px;
+                padding: 9px 3px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <div class="header">
+
+        <h1>Student Hub Portal</h1>
+
+    </div>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <div class="container">
+
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <div class="sidebar">
+
+            <h2>Features</h2>
+
+
+            <!-- Attendance -->
+
+            <div class="feature"
+                 onclick="window.location.href='attendance.html'">
+
+                📊 Attendance
+
+            </div>
+
+
+            <!-- Profile -->
+
+            <div class="feature"
+                 onclick="window.location.href='profile.html'">
+
+                👤 Profile
+
+            </div>
+
+
+            <!-- Events -->
+
+            <div class="feature"
+                 onclick="window.location.href='events.html'">
+
+                📅 Events
+
+            </div>
+
+
+            <!-- Result -->
+
+            <div class="feature"
+                 onclick="window.location.href='result.html'">
+
+                📈 Result
+
+            </div>
+
+
+            <!-- Time Table -->
+
+            <div class="feature"
+                 onclick="window.location.href='timetable.html'">
+
+                🕐 Time Table
+
+            </div>
+
+
+            <!-- Assignment -->
+
+            <div class="feature"
+                 onclick="window.location.href='assignment.html'">
+
+                📝 Assignment
+
+            </div>
+
+
+            <!-- Course -->
+
+            <div class="feature"
+                 onclick="window.location.href='course.html'">
+
+                📚 Course
+
+            </div>
+
+
+            <!-- Certificates -->
+
+            <div class="feature"
+                 onclick="window.location.href='certificates.html'">
+
+                🏆 Certificates
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= CENTER CALENDAR ================= -->
+
+        <div class="content">
+
+
+            <h2 id="monthTitle">
+                2026 Calendar
+            </h2>
+
+
+            <!-- MONTH SELECT -->
+
+            <select id="month"
+                    onchange="showCalendar()">
+
+                <option value="">
+                    Select Month
+                </option>
+
+                <option value="0">
+                    January
+                </option>
+
+                <option value="1">
+                    February
+                </option>
+
+                <option value="2">
+                    March
+                </option>
+
+                <option value="3">
+                    April
+                </option>
+
+                <option value="4">
+                    May
+                </option>
+
+                <option value="5">
+                    June
+                </option>
+
+                <option value="6">
+                    July
+                </option>
+
+                <option value="7">
+                    August
+                </option>
+
+                <option value="8">
+                    September
+                </option>
+
+                <option value="9">
+                    October
+                </option>
+
+                <option value="10">
+                    November
+                </option>
+
+                <option value="11">
+                    December
+                </option>
+
+            </select>
+
+
+            <!-- CALENDAR -->
+
+            <div class="calendar">
+
+                <div
+                    class="dates"
+                    id="dates">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <div class="holidays">
+
+
+            <h2>
+                🎉 Holidays
+            </h2>
+
+
+            <div id="holidayList">
+
+                <p style="text-align:center;">
+                    Select a month
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+
+        /* MONTH NAMES */
+
+        const monthNames = [
+
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+
+        ];
+
+
+        /* ================= 2026 HOLIDAYS ================= */
+
+        const holidays = {
+
+
+            0: [
+
+                ["26 January", "Republic Day"]
+
+            ],
+
+
+            1: [
+
+                ["15 February", "Maha Shivratri"]
+
+            ],
+
+
+            2: [
+
+                ["4 March", "Holi"]
+
+            ],
+
+
+            3: [
+
+                ["3 April", "Good Friday"],
+
+                ["14 April", "Ambedkar Jayanti"]
+
+            ],
+
+
+            4: [
+
+                ["1 May", "Labour Day"]
+
+            ],
+
+
+            5: [
+
+                ["17 June", "Bakrid"]
+
+            ],
+
+
+            6: [
+
+                ["16 July", "Muharram"]
+
+            ],
+
+
+            7: [
+
+                ["15 August", "Independence Day"],
+
+                ["26 August", "Janmashtami"]
+
+            ],
+
+
+            8: [
+
+                ["2 September", "Ganesh Chaturthi"],
+
+                ["14 September", "Onam"]
+
+            ],
+
+
+            9: [
+
+                ["2 October", "Gandhi Jayanti"],
+
+                ["20 October", "Dussehra"]
+
+            ],
+
+
+            10: [
+
+                ["8 November", "Diwali"],
+
+                ["9 November", "Govardhan Puja"]
+
+            ],
+
+
+            11: [
+
+                ["25 December", "Christmas"]
+
+            ]
+
+        };
+
+
+
+        /* ================= SHOW CALENDAR ================= */
+
+        function showCalendar() {
+
+
+            let month =
+                document.getElementById("month").value;
+
+
+            let dates =
+                document.getElementById("dates");
+
+
+            let holidayList =
+                document.getElementById("holidayList");
+
+
+            let monthTitle =
+                document.getElementById("monthTitle");
+
+
+            /* CLEAR OLD DATA */
+
+            dates.innerHTML = "";
+
+            holidayList.innerHTML = "";
+
+
+            /* IF NO MONTH SELECTED */
+
+            if (month === "") {
+
+
+                monthTitle.innerHTML =
+                    "2026 Calendar";
+
+
+                holidayList.innerHTML =
+                    "<p style='text-align:center;'>Select a month</p>";
+
+
+                return;
+
+            }
+
+
+            month = parseInt(month);
+
+
+            /* CHANGE TITLE */
+
+            monthTitle.innerHTML =
+                monthNames[month] + " 2026";
+
+
+            /* ================= DAY NAMES ================= */
+
+            const days = [
+
+                "Sun",
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat"
+
+            ];
+
+
+            days.forEach(function(day) {
+
+
+                let dayBox =
+                    document.createElement("div");
+
+
+                dayBox.className =
+                    "day";
+
+
+                dayBox.innerHTML =
+                    day;
+
+
+                dates.appendChild(dayBox);
+
+
+            });
+
+
+
+            /* ================= FIRST DAY ================= */
+
+            let firstDay =
+                new Date(
+                    2026,
+                    month,
+                    1
+                ).getDay();
+
+
+
+            /* ================= TOTAL DAYS ================= */
+
+            let totalDays =
+                new Date(
+                    2026,
+                    month + 1,
+                    0
+                ).getDate();
+
+
+
+            /* ================= EMPTY BOXES ================= */
+
+            for (
+                let i = 0;
+                i < firstDay;
+                i++
+            ) {
+
+
+                let empty =
+                    document.createElement("div");
+
+
+                empty.className =
+                    "date empty";
+
+
+                dates.appendChild(empty);
+
+            }
+
+
+
+            /* ================= DATE BOXES ================= */
+
+            for (
+                let date = 1;
+                date <= totalDays;
+                date++
+            ) {
+
+
+                let dateBox =
+                    document.createElement("div");
+
+
+                dateBox.className =
+                    "date";
+
+
+                dateBox.innerHTML =
+                    date;
+
+
+                dates.appendChild(dateBox);
+
+            }
+
+
+
+            /* ================= HOLIDAYS ================= */
+
+            if (holidays[month]) {
+
+
+                holidays[month].forEach(
+                    function(item) {
+
+
+                        let box =
+                            document.createElement("div");
+
+
+                        box.className =
+                            "holiday";
+
+
+                        box.innerHTML =
+
+                            "<div class='holiday-date'>" +
+                            item[0] +
+                            "</div>" +
+
+                            "<div class='holiday-name'>" +
+                            item[1] +
+                            "</div>";
+
+
+                        holidayList.appendChild(box);
+
+
+                    }
+                );
+
+
+            }
+
+            else {
+
+
+                holidayList.innerHTML =
+                    "<p style='text-align:center;'>No holidays added.</p>";
+
+            }
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

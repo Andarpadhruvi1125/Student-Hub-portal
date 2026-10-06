@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Hub Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+        <tr>
+            <td colspan="2">
+
+                <table width="100%">
+                    <tr>
+
+                        <td align="center">
+                            <h2>Student Hub Portal</h2>
+                        </td>
+
+                        <td align="right">
+                            👤
+                            <a href="profile.html">Name</a>
+                            <a href="settings.html">Settings</a>
+                        </td>
+
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+
+        <tr>
+
+            <td width="20%" valign="top" align="center">
+
+                <p><a href="dashboard.html">Dashboard</a></p>
+                <p><a href="attendance.html">Attendance</a></p>
+                <p><a href="course.html">Course</a></p>
+                <p><a href="assignment.html">Assignment</a></p>
+                <p><a href="result.html">Result</a></p>
+                <p><a href="fees.html">Fees</a></p>
+                <p><a href="library.html">Library</a></p>
+                <p><a href="profile.html">Profile</a></p>
+                <p><a href="certificate.html">Certificate</a></p>
+                <p><a href="placement.html">Placement</a></p>
+                <p><a href="feedback.html">Feedback</a></p>
+                <p><a href="Academic Calendar.html">Academic Calendar</a></p>
+
+            </td>
+
+            <td align="center">
+
+                <h1>Attendance</h1>
+
+                Semester :
+
+                <select id="semester" onchange="showAttendance()">
+
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+
+                </select>
+
+                <br><br>
+
+                <!-- Attendance Table -->
+
+                <table border="1" width="90%" cellpadding="15">
+
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Present</th>
+                            <th>Total</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="attendanceTable">
+                    </tbody>
+
+                </table>
+
+                <br>
+
+                <!-- Overall Attendance -->
+
+                <table border="1" width="90%" cellpadding="20">
+
+                    <tr>
+
+                        <td align="center">
+
+                            <h3>Overall Attendance</h3>
+
+                            <h2 id="overallAttendance">0%</h2>
+
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </td>
+
+        </tr>
+
+    </table>
+
+
+    <script>
+
+        // Attendance data for each semester
+
+        const attendanceData = {
+
+            1: [
+                ["Mathematics", 28, 30, "93%"],
+                ["Physics", 27, 30, "90%"],
+                ["Chemistry", 29, 30, "97%"],
+                ["Programming", 26, 30, "87%"]
+            ],
+
+            2: [
+                ["Mathematics-II", 27, 30, "90%"],
+                ["Physics-II", 28, 30, "93%"],
+                ["Electrical", 26, 30, "87%"],
+                ["Engineering Drawing", 29, 30, "97%"]
+            ],
+
+            3: [
+                ["Web Development", 28, 30, "93%"],
+                ["Java", 27, 30, "90%"],
+                ["Python", 29, 30, "97%"],
+                ["Database", 26, 30, "87%"]
+            ],
+
+            4: [
+                ["Data Structures", 28, 30, "93%"],
+                ["Operating System", 27, 30, "90%"],
+                ["Computer Networks", 29, 30, "97%"],
+                ["Software Engineering", 26, 30, "87%"]
+            ],
+
+            5: [
+                ["Artificial Intelligence", 28, 30, "93%"],
+                ["Machine Learning", 27, 30, "90%"],
+                ["Cloud Computing", 29, 30, "97%"],
+                ["Cyber Security", 26, 30, "87%"]
+            ],
+
+            6: [
+                ["Big Data", 28, 30, "93%"],
+                ["Web Technology", 27, 30, "90%"],
+                ["IoT", 29, 30, "97%"],
+                ["Data Mining", 26, 30, "87%"]
+            ],
+
+            7: [
+                ["Advanced Java", 28, 30, "93%"],
+                ["Blockchain", 27, 30, "90%"],
+                ["Cloud Security", 29, 30, "97%"],
+                ["Project", 26, 30, "87%"]
+            ],
+
+            8: [
+                ["Project Work", 28, 30, "93%"],
+                ["Internship", 27, 30, "90%"],
+                ["Seminar", 29, 30, "97%"],
+                ["Professional Skills", 26, 30, "87%"]
+            ]
+
+        };
+
+
+        // Function to display attendance
+
+        function showAttendance() {
+
+            // Get selected semester
+
+            let semester = document.getElementById("semester").value;
+
+            // Get data of selected semester
+
+            let data = attendanceData[semester];
+
+            // Get table body
+
+            let table = document.getElementById("attendanceTable");
+
+            // Clear old data
+
+            table.innerHTML = "";
+
+            let totalPresent = 0;
+            let totalClasses = 0;
+
+
+            // Add new attendance rows
+
+            data.forEach(function(subject) {
+
+                let row = `
+                    <tr>
+                        <td>${subject[0]}</td>
+                        <td align="center">${subject[1]}</td>
+                        <td align="center">${subject[2]}</td>
+                        <td align="center">${subject[3]}</td>
+                    </tr>
+                `;
+
+                table.innerHTML += row;
+
+                totalPresent += subject[1];
+                totalClasses += subject[2];
+
+            });
+
+
+            // Calculate overall attendance
+
+            let overall = Math.round(
+                (totalPresent / totalClasses) * 100
+            );
+
+
+            // Display overall attendance
+
+            document.getElementById("overallAttendance").innerHTML =
+                overall + "%";
+
+        }
+
+
+        // Show Semester 1 attendance when page opens
+
+        showAttendance();
+
+    </script>
+
+</body>
+
+</html>
