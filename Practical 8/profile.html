@@ -1,0 +1,185 @@
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Hub Portal - Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<table border="1" width="100%" cellspacing="0" cellpadding="10">
+
+    <tr>
+        <td colspan="2">
+
+            <table width="100%">
+                <tr>
+
+                    <td align="center">
+                        <h2>Student Hub Portal</h2>
+                    </td>
+
+                    <td align="right">
+                        👤
+                        <a href="Profile.html">Name</a>
+                        &nbsp;&nbsp;
+                        <a href="settings.html">Settings</a>
+                    </td>
+
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+
+    <tr>
+
+        <td width="22%" valign="top">
+
+            <p><a href="dashboard.html">Dashboard</a></p>
+            <p><a href="attendance.html">Attendance</a></p>
+            <p><a href="course.html">Course</a></p>
+            <p><a href="assignment.html">Assignment</a></p>
+            <p><a href="result.html">Result</a></p>
+            <p><a href="fees.html">Fees</a></p>
+            <p><a href="library.html">Library</a></p>
+            <p><a href="Profile.html">Profile</a></p>
+            <p><a href="certificate.html">Certificate</a></p>
+            <p><a href="placement.html">Placement</a></p>
+            <p><a href="feedback.html">Feed Back</a></p>
+
+            <p>
+                <a href="Academic Calendar.html">
+                    Academic Calendar
+                </a>
+            </p>
+
+        </td>
+
+        <td valign="top">
+
+            <h2 align="center">Student Profile</h2>
+
+            <form action="profile.php" method="POST">
+
+                <table width="100%" cellpadding="10">
+
+                    <tr>
+                        <td width="30%">
+                            <b>Name:</b>
+                        </td>
+
+                        <td>
+                            <input type="text" name="name"
+                                   placeholder="Enter Name" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Enrollment No.:</b>
+                        </td>
+
+                        <td>
+                            <input type="text" name="enrollment"
+                                   placeholder="Enter Enrollment No." required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Email:</b>
+                        </td>
+
+                        <td>
+                            <input type="email" name="email"
+                                   placeholder="Enter Email" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Branch:</b>
+                        </td>
+
+                        <td>
+                            <input type="text" name="branch"
+                                   placeholder="Enter Branch" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Semester:</b>
+                        </td>
+
+                        <td>
+                            <input type="text" name="semester"
+                                   placeholder="Enter Semester" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Phone:</b>
+                        </td>
+
+                        <td>
+                            <input type="text" name="phone"
+                                   placeholder="Enter 10 digit phone number"
+                                   required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Date of Birth:</b>
+                        </td>
+
+                        <td>
+                            <input type="date" name="dob" required>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <b>Address:</b>
+                        </td>
+
+                        <td>
+                            <textarea name="address"
+                                      rows="4"
+                                      cols="30"
+                                      placeholder="Enter Address"
+                                      required></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+
+                            <input type="submit"
+                                   value="Save Profile">
+
+                            <input type="reset"
+                                   value="Clear">
+
+                        </td>
+                    </tr>
+
+                </table>
+
+            </form>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>
+```
