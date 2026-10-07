@@ -1,7 +1,6 @@
 ```php
 <?php
 
-// Form માંથી data મેળવવું
 $name = $_POST["name"];
 $enrollment = $_POST["enrollment"];
 $email = $_POST["email"];
@@ -11,13 +10,10 @@ $phone = $_POST["phone"];
 $dob = $_POST["dob"];
 $address = $_POST["address"];
 
-// CSV file નું નામ
 $file = "profiles.csv";
 
-// File open કરવી
 $handle = fopen($file, "a");
 
-// જો file નવી છે તો headings add કરવી
 if (filesize($file) == 0) {
     fputcsv($handle, array(
         "Name",
@@ -31,7 +27,6 @@ if (filesize($file) == 0) {
     ));
 }
 
-// Student information CSV માં save કરવી
 fputcsv($handle, array(
     $name,
     $enrollment,
@@ -43,7 +38,6 @@ fputcsv($handle, array(
     $address
 ));
 
-// File close કરવી
 fclose($handle);
 
 ?>
